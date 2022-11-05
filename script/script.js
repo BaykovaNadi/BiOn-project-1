@@ -4,11 +4,10 @@ let money, time;
 
 function start() {
     money = +prompt ("Ваш бюджет на месяц?", '');
-    time = prompt ("Введите дату в формате YYYY-MM-DD", '');
-
     while (isNaN (money) || money =='' || money == null) {
         money = +prompt ("Ваш бюджет на месяц?", '');
     }
+    time = prompt ("Введите дату в формате YYYY-MM-DD", '');
 }
 
 start();
@@ -107,11 +106,13 @@ function checkSaving() {
 // cумма определения необязательных расходов
 function chooseOptExpenses() {
     let i = 0;
+    let b = 0;
     do {
-        let a = prompt ("Статья необязательных расходов?", '');
+        let a = prompt ("Статья необязательных расх70000одов?", '');
         if ((typeof(a)) === 'string' && (typeof(a)) != null && a != '' && a.length < 50) {
                 console.log('done');
-                appData.optionalExpenses[i] = a;
+                b = i + 1;
+                appData.optionalExpenses[b] = a;
                 i++;
             } else {
                 console.log('Data error. Enter');

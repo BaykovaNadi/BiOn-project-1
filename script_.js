@@ -71,23 +71,7 @@ const appData = {
 // Формирование массива income[]
     chooseIncome: function() {
         let items = prompt('Что принесет дополнительный доход? (Перечислите через запятую)', '');
-        if ((typeof(items)) === 'string' && (typeof(items)) != null && items != '') {
-            appData.income = items.split(', ');
-            appData.income.push(prompt('Что-то еще?', ''));
-            appData.income.sort();
-            console.log("Способы доп. заработка: ");
-            let ind, item, arr;
-            appData.income.forEach ((item, ind, arr) => {
-                ind = ind + 1;
-                console.log(ind + ": " + item);
-            });
-        } else {
-            console.log('Data error. Enter');
-        }
+        appData.income = prompt.split(', ');
     }
 };
 
-console.log("Наша программа включает в себя данные: ");
-for (let key in appData) {
-    console.log(key);
-}
